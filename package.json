@@ -1,7 +1,7 @@
 {
-  "name": "Eat-Da-Burger",
+  "name": "burger",
   "version": "1.0.0",
-  "description": "restaurant app that lets users input the names of burgers they'd like to eat.",
+  "description": "Eat Da Burger",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,17 +10,22 @@
     "type": "git",
     "url": "git+https://github.com/sonjohan/Eat-Da-Burger.git"
   },
-  "keywords": [],
+  "keywords": [
+    "burger"
+  ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sonjohan/Eat-Da-Burger/issues"
   },
   "homepage": "https://github.com/sonjohan/Eat-Da-Burger#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4",
+    "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
-    "mysql": "^2.16.0"
+    "method-override": "^3.0.0",
+    "mysql": "^2.16.0",
+    "sequelize": "^4.38.0",
+    "sequelize-heroku": "^2.0.0"
   }
 }

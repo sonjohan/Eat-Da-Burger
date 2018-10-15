@@ -1,42 +1,22 @@
-// ==============================================================================
-// DEPENDENCIES
-// Series of npm packages that we will use to give our server useful functionality
-// ==============================================================================
-
-var express = require("express");
-var bodyParser = require("body-parser");
-var path = require("path");
+var express = require('express');
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 
 
-// ==============================================================================
-// EXPRESS CONFIGURATION
-// This sets up the basic properties for our express server
-// ==============================================================================
-
-// Tells node that we are creating an "express" server
 var app = express();
 
-// Sets an initial port. We"ll use this later in our listener
-var PORT = process.env.PORT || 3000;
+app.use(express.static(process.cwd() + '/public'));
 
-// Sets up the Express app to handle data parsing
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 
-// ================================================================================
-// ROUTER
-// The below points our server to a series of "route" files.
-// These routes give our server a "map" of how to respond when users visit or request data from various URLs.
-// ================================================================================
+app.use(methodOverride('_method'));
 
-require("./routing/apiRoutes")(app);
-require("./routing/htmlRoutes")(app);
+var exphbs = require('express-handlebars');
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 
-// =============================================================================
-// LISTENER
-// The below code effectively "starts" our server
-// =============================================================================
+var router = require('./controllers/burgers_controller.js');
+app.use('/', router);
 
-app.listen(PORT, function () {
-    console.log("App listening on PORT: " + PORT);
-});
+var PORT = process.env.PORT || 8080;
+app.listen(PORT);

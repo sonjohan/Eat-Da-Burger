@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eat da Burger</title>
+
+    <link rel="/public/assets/img/burger-triple.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/burger.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.9/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <br>
+
+        <center>
+            <div class="row">
+                <img src="/assets/img/burger-triple.png" class="center">
+            </div>
+        </center>
+
+        <center>
+            <h1><p class="badge badge-secondary px-5 mt-3 rounded">EAT DA BURGER!</p></h1>
+        </center>
+
+        {{{body}}}
+
+        <br>
+
+        <form action="burger/create" method="POST">
+
+            <div class="row" class="mx-auto"> 
+
+                <div class="form-group col">
+                    <center><label for="new_burger">Request a new burger and place your order!</label></center>
+                    <textarea class="form-control mx-auto" columns="8" rows="4" id="new_burger" name="burger_name"></textarea>
+                </div>     
+             </div>
+
+             <center class="mx-auto">
+                 <button id="submit-button" type="submit" class="btn btn-danger"><i class="fas fa-edit fa-lg">&nbsp;</i>Place Order</button>
+             </center>
+
+        </form>
+
+        <br>
+
+    </div>   
+    
+</body>
+</html>
